@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --palette-surface: #f8f8f8;
+  --palette-primary: #5067aa;
+  --palette-accent: #86a6de;
+  --palette-deep: #32457b;
+}
+
+.font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid #5067aa; outline-offset: 3px; }
+
+.admin-input { @apply mt-2 w-full rounded border border-[#32457b]/20 bg-white px-3 py-2.5 text-sm outline-none focus:border-[#5067aa]; }
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  background: #32457b;
+}
+
+html[data-theme='dark'] body {
+  background: #32457b;
+  color: #f8f8f8;
+}
+
+html[data-theme='dark'] .home-hero-surface {
+  background-color: #5067aa !important;
+}
+
+html[data-theme='dark'] .home-hero-media {
+  background-color: #32457b !important;
+}
+
+html[data-theme='dark'] [class*="bg-[#f8f8f8]"],
+html[data-theme='dark'] [class*="bg-[#86a6de]"],
+html[data-theme='dark'] [class*="bg-white"] {
+  background-color: #5067aa !important;
+}
+
+html[data-theme='dark'] [class*="text-[#32457b]"],
+html[data-theme='dark'] [class*="text-[#5067aa]"] {
+  color: #f8f8f8 !important;
+}
+
+html[data-theme='dark'] [class*="border-[#32457b]"],
+html[data-theme='dark'] [class*="divide-[#32457b]"] {
+  border-color: rgb(134 166 222 / 35%) !important;
+}
+
+html[data-theme='dark'] input,
+html[data-theme='dark'] select,
+html[data-theme='dark'] textarea {
+  color-scheme: dark;
+}
