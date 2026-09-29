@@ -142,7 +142,7 @@ function Home({ health }: { health: HealthState }) {
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#5067aa]">The everyday collection</p>
           <h1 className="max-w-lg font-serif text-5xl leading-[1.06] tracking-tight sm:text-6xl">A little more intention in every day.</h1>
           <p className="mt-6 max-w-md text-base leading-7 text-[#5067aa]">Useful, quietly beautiful objects for the rituals that make a home feel like yours.</p>
-          <Link to="/products" className="mt-9 w-fit rounded-full bg-[#32457b] px-7 py-3 text-sm font-medium text-white transition hover:bg-[#5067aa]">Explore the collection <span aria-hidden="true">↗</span></Link>
+          <Link to="/products" className="mt-9 w-fit rounded-full bg-[#7893e6] px-7 py-3 text-sm font-medium text-white transition hover:bg-[#5067aa]">Explore the collection <span aria-hidden="true">↗</span></Link>
           <p role="status" className="mt-8 text-xs text-[#5067aa]">
             {health === 'checking' ? 'Connecting to the store…' : health === 'connected' ? 'Store services are online.' : 'Store services are starting. Check the API connection.'}
           </p>
