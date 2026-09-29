@@ -20,6 +20,7 @@ const helmet = require('helmet') as () => RequestHandler;
 const rateLimit = require('express-rate-limit') as (options: { windowMs: number; limit: number }) => RequestHandler;
 
 export const app = express();
+export default app;
 
 app.disable('x-powered-by');
 app.use(helmet());
