@@ -1,10 +1,8 @@
-import { helmet } from 'helmet';
-import { rateLimit } from 'express-rate-limit';
+import express from "express";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import express from 'express';
-import rateLimit from 'express-rate-limit';
-import helmet from 'helmet';
 import { database } from './config/database.js';
 import { env } from './config/env.js';
 import { errorHandler } from './middleware/error-handler.js';
