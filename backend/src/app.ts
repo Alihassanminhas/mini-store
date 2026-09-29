@@ -1,6 +1,6 @@
 import express from "express";
-import * as helmetModule from "helmet";
-import { rateLimit } from "express-rate-limit";
+import { createRequire } from 'node:module';
+import type { RequestHandler } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { database } from './config/database.js';
@@ -15,10 +15,14 @@ import { stripeWebhookRouter } from './routes/webhooks.js';
 import { adminRouter } from './routes/admin.js';
 import { uploadsRouter } from './routes/uploads.js';
 
+const require = createRequire(import.meta.url);
+const helmet = require('helmet') as () => RequestHandler;
+const rateLimit = require('express-rate-limit') as (options: { windowMs: number; limit: number }) => RequestHandler;
+
 export const app = express();
 
 app.disable('x-powered-by');
-app.use(helmetModule.default());
+app.use(helmet());
 app.use(cors({ origin: env.FRONTEND_URL, credentials: true }));
 app.use(verifyOrigin);
 app.use('/api/payments', express.raw({ type: 'application/json', limit: '1mb' }), stripeWebhookRouter);
